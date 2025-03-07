@@ -171,19 +171,115 @@ class AccountController extends Controller
 		}
 	}
 
+	// public function actionConvert()
+	// {
+	// 	$model = new User;
+		
+	// 	$sql = $model->findAll(array(
+	// 		'condition' => 'lastname LIKE :lastname AND YEAR(date_hired) <= :year',
+	// 		'params' => array(
+	// 			':lastname' => 'B%',
+	// 			':year' => 2019,
+	// 		),
+	// 	));
+	
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql,
+	// 	));
+	// }
+
+
+	// 	public function actionConvert()
+	// {
+	// 	$model = new User;
+
+	// 	$sql = $model->findAll(array(
+	// 		'condition' => 'firstname IN (:name1, :name2, :name3) AND middlename IS NOT NULL AND middlename != ""',
+	// 		'params' => array(
+	// 			':name1' => 'Mary',
+	// 			':name2' => 'Stacy',
+	// 			':name3' => 'Andrea',
+	// 		),
+	// 	));
+
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql,
+	// 	));
+	// }
+
+
+	// public function actionConvert()
+	// {
+	// 	$model = new User;
+
+	// 	$sql = $model->find(array(
+	// 		'condition' => 'firstname = :firstname',
+	// 		'params' => array(':firstname' => 'Virginia'),
+	// 	));
+
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql,
+	// 	));
+	// }
+
+
+	// public function actionConvert()
+	// {
+	// 	$model = new User;
+
+	// 	$sql = $model->findAll(array(
+	// 		'condition' => 'gender = :gender AND (middlename IS NULL OR middlename = "")',
+	// 		'params' => array(':gender' => 'Female'),
+	// 	));
+
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql, 
+	// 	));
+	// }
+
+	// public function actionConvert()
+	// {
+	// 	$model = new User;
+	
+	// 	$sql = $model->findByPk(2);
+	
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql,
+	// 	));
+	// }
+	
+
+	// public function actionConvert()
+	// {
+	// 	$model = new User;
+
+	// 	$sql = $model->findAll(array(
+	// 		'condition' => 'gender = :gender AND TIMESTAMPDIFF(YEAR, dob, CURDATE()) >= :age',
+	// 		'params' => array(
+	// 			':gender' => 'Male',
+	// 			':age' => 40,
+	// 		),
+	// 	));
+
+	// 	$this->render('convert', array(
+	// 		'sql' => $sql,
+	// 	));
+	// }
+
+
 	public function actionConvert()
 	{
 		$model = new User;
-    	$sql = $model->findAll(array(
-        'condition' => 'lastname LIKE :lastname AND date_hired <= :date_hired',
-        'params' => array(
-            ':lastname' => 'B%',
-            ':date_hired' => '2019',
-        ),
-    ));
-    $this->render('convert', array(
-        'sql' => $sql,
-    ));
 
+		$sql = $model->findAll(array(
+			'condition' => 'firstname LIKE :firstname',
+			'params' => array(':firstname' => '%y'),
+		));
+
+		$this->render('convert', array(
+			'sql' => $sql, 
+		));
 	}
+
+	
 }
